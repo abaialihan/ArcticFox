@@ -47,7 +47,7 @@ public class MessageController {
     }
 
     @GetMapping("/main")
-    public String main(
+    public String main(                                                           //сортировка страницы
            @RequestParam(required = false, defaultValue = "") String filter,
            Model model,
            @PageableDefault(sort = {"id"}, direction = Sort.Direction.DESC) Pageable pageable,
@@ -63,7 +63,7 @@ public class MessageController {
     }
 
     @PostMapping("/main")
-    public String add(
+    public String add(                            //добавление файла для месседжа
             @AuthenticationPrincipal User user,   //пользователь из сессии
             @Valid Message message,
             BindingResult bindingResult,
@@ -92,7 +92,7 @@ public class MessageController {
         return "main";
     }
 
-    //сохранение файла
+    //сохранение файла для месседжа
     private void saveFile(@Valid Message message, @RequestParam("file") MultipartFile file) throws IOException {
         if (file != null && !file.getOriginalFilename().isEmpty()) {
             File uploadDir = new File(uploadPath);

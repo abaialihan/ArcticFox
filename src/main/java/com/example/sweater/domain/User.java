@@ -26,6 +26,7 @@ public class User implements UserDetails {
     @NotBlank(message = "Password cannot be empty")
     public String password;
 
+    private String avatar;
 
     private boolean active;
 
@@ -182,5 +183,13 @@ public class User implements UserDetails {
 
     public void setSubscriptions(Set<User> subscriptions) {
         this.subscriptions = subscriptions;
+    }
+
+    public String getAvatar() {
+        return avatar;
+    }
+
+    public void setAvatar(String avatar) {
+        this.avatar = avatar;
     }
 }
