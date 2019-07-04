@@ -1,6 +1,5 @@
 package com.example.sweater.controller;
 
-import com.example.sweater.domain.Message;
 import com.example.sweater.domain.Role;
 import com.example.sweater.domain.User;
 import com.example.sweater.repos.UserRepo;
@@ -13,7 +12,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
-
 import javax.validation.Valid;
 import java.io.File;
 import java.io.IOException;
@@ -75,10 +73,10 @@ public class UserController {
             @AuthenticationPrincipal User user,
             @RequestParam String password,
             @RequestParam String email,
-            String avatar
-           // @RequestParam("file") MultipartFile file
+            String avatar,
+           @RequestParam("file") MultipartFile file
     ) throws IOException {
-       // saveAvatar(user, file);
+        saveAvatar(user, file);
 
         userSevice.updateProfile(user, password, email, avatar);
 

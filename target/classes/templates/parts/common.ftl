@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
-    <title>Sweater</title>
+    <title>Arctic Fox</title>
     <style>
    body {
     background-image: url(https://www.larutadelsorigens.cat/filelook/full/11/119526/minimalist-wallpaper.jpg);

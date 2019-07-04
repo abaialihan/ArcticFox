@@ -122,9 +122,9 @@ public class UserSevice implements UserDetailsService {
             user.setPassword(password);
         }
 
-        /*if(!StringUtils.isEmpty(avatar)){
+        if(!StringUtils.isEmpty(avatar)){
             user.setAvatar(avatar);
-        }*/
+        }
 
         userRepo.save(user);
 
